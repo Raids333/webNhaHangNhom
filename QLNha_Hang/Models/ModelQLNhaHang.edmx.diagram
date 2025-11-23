@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="afa7eb1b5c5a44a396d1e55d29874528" Name="Diagram1">
+        <EntityTypeShape EntityType="QLNhaHangModel.Ban" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.CT_DonHang" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.DatBan" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.DonHang" Width="1.5" PointX="8.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.KhachHang" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.LoaiMon" Width="1.5" PointX="6.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.MonAn" Width="1.5" PointX="8.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.NhanVien" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.TaiKhoan_VaiTro" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.ThanhToan" Width="1.5" PointX="10.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNhaHangModel.VaiTro" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
+        <AssociationConnector Association="QLNhaHangModel.FK_DatBan_Ban" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_DonHang_Ban" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_CTDH_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_CTDH_MonAn" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_DatBan_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_DonHang_DatBan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_DonHang_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_ThanhToan_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_KhachHang_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_MonAn_LoaiMon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_NhanVien_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_TKVT_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNhaHangModel.FK_TKVT_VaiTro" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

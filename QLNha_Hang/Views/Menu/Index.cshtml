@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QLNha_Hang.Models.LoaiMon>
+
+@{
+    ViewBag.Title = "Thực đơn nhà hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["ThongBao"] != null)
+{
+    <div class="alert alert-success">@TempData["ThongBao"]</div>
+}
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #f0c14b;">THỰC ĐƠN CỦA CHÚNG TÔI</h2>
+    @foreach (var loai in Model)
+    {
+        if (loai.MonAns.Count > 0)
+        {
+            <div class="category-section mb-5">
+                <h3 class="border-bottom pb-2 mb-3">@loai.TenLoai</h3>
+
+                <div class="row">
+                    @foreach (var mon in loai.MonAns)
+                    {
+                        if (mon.DangKinhDoanh == true)
+                        {
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="@(string.IsNullOrEmpty(mon.AnhMon) ? "/Content/images/default-food.png" : mon.AnhMon)"
+                                         class="card-img-top" alt="@mon.TenMon" style="height: 200px; object-fit: cover;">
+
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title fw-bold">@mon.TenMon</h5>
+                                            <span class="text-warning fw-bold">@mon.DonGia.ToString("N0") đ</span>
+                                        </div>
+                                        <p class="card-text text-muted small">@mon.MoTa</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-0">
+                                        <a class="btn btn-outline-warning w-100"
+                                           href="@Url.Action("DatMon", "Menu", new { monID = mon.MonAnID, returnUrl = Request.RawUrl })">
+                                            Đặt món
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,108 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|d:\\2001230874_thai\\website_quan_li_nha_hang\\website_quan_li_nha_hang\\qlnha_hang\\qlnha_hang\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|solutionrelative:qlnha_hang\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\qlnha_hang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|solutionrelative:qlnha_hang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\qlnha_hang\\views\\menu\\orderhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|solutionrelative:qlnha_hang\\views\\menu\\orderhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|d:\\2001230874_thai\\website_quan_li_nha_hang\\website_quan_li_nha_hang\\qlnha_hang\\qlnha_hang\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|solutionrelative:qlnha_hang\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\qlnha_hang\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC870551-9545-49B0-8A25-776BD5A56167}|QLNha_Hang\\QLNha_Hang.csproj|solutionrelative:qlnha_hang\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 226,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Controllers\\MenuController.cs",
+              "RelativeDocumentMoniker": "QLNha_Hang\\Controllers\\MenuController.cs",
+              "ToolTip": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Controllers\\MenuController.cs",
+              "RelativeToolTip": "QLNha_Hang\\Controllers\\MenuController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswCkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:35:49.825Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "QLNha_Hang\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "QLNha_Hang\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T02:52:08.798Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderHistory.cshtml",
+              "DocumentMoniker": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Views\\Menu\\OrderHistory.cshtml",
+              "RelativeDocumentMoniker": "QLNha_Hang\\Views\\Menu\\OrderHistory.cshtml",
+              "ToolTip": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Views\\Menu\\OrderHistory.cshtml",
+              "RelativeToolTip": "QLNha_Hang\\Views\\Menu\\OrderHistory.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwDQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T03:19:15.726Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "QLNha_Hang\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "QLNha_Hang\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAmwJUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T11:43:54.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Views\\Menu\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLNha_Hang\\Views\\Menu\\Index.cshtml",
+              "ToolTip": "D:\\2001230874_thai\\Website_Quan_Li_Nha_Hang\\Website_Quan_Li_Nha_Hang\\QLNha_Hang\\QLNha_Hang\\Views\\Menu\\Index.cshtml",
+              "RelativeToolTip": "QLNha_Hang\\Views\\Menu\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T09:01:50.908Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

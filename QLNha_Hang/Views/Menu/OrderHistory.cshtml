@@ -1,0 +1,55 @@
+﻿@model List<QLNha_Hang.Models.MonAn>
+@{
+    ViewBag.Title = "OrderHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LỊCH SỬ ĐẶT MÓN</h2>
+
+@if (TempData["ThongBao"] != null)
+{
+    <div class="alert alert-success">@TempData["ThongBao"]</div>
+}
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-warning text-center fw-bold">
+        Chưa có món ăn nào được đặt.
+    </div>
+}
+
+
+<div class="card border-dark" style="margin-bottom:25px;">
+    <table class="table table-bordered">
+        <tr style="background-color:#f2f2f2; font-weight:bold;">
+            <th>MÃ MÓN</th>
+            <th>TÊN MÓN</th>
+            <th>LOẠI MÓN</th>
+            <th>ĐƠN GIÁ</th>
+        </tr>
+
+        @foreach (var food in Model)
+        {
+            <tr>
+                <td width="20%">@food.MonAnID</td>
+
+                <td width="35%">@food.TenMon</td>
+
+                <td width="35%">@food.LoaiMon.TenLoai</td>
+
+                <td width="15%">
+                    @string.Format("{0:0,0}", food.DonGia) VNĐ
+                </td>
+
+            </tr>
+        }
+    </table>
+    <div class="alert alert-info text-end">
+        <b>Tổng cộng:</b> @string.Format("{0:0,0}", ViewBag.TongThanhTien) VNĐ
+    </div>
+</div>
+<a class="btn btn-warning fw-bold" href="@Url.Action("Index", "Menu")">
+    Quay lại thực đơn
+</a>
+
+

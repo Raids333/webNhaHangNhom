@@ -1,0 +1,181 @@
+﻿@model QLNha_Hang.Models.FormDatBanVM
+
+@{
+    ViewBag.Title = "Đặt Bàn Online";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .form-card {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        color: #333;
+        margin-top: 30px;
+    }
+
+        .form-card h2 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #f0c14b;
+        }
+
+    .form-label {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .gold-input {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        color: #333;
+        transition: all 0.25s ease;
+    }
+
+        .gold-input:focus {
+            border-color: #f0c14b;
+            box-shadow: 0 0 5px rgba(240,193,75,0.5);
+        }
+
+    .btn-gold {
+        background-color: #f0c14b;
+        color: #1c1c1c;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+        .btn-gold:hover {
+            background-color: #ffd700;
+        }
+
+    .text-danger {
+        font-size: 14px;
+        margin-top: 3px;
+        display: block;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <div class="form-card">
+            <h2>Đặt Bàn Online</h2>
+
+            @if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+            {
+                <div class="alert alert-danger">
+                    @Html.ValidationSummary(true, "Vui lòng kiểm tra lại các lỗi sau:")
+                </div>
+            }
+
+            @using (Html.BeginForm("Index", "Booking", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Họ tên<span style="color: red">*</span></label>
+                        @Html.TextBoxFor(m => m.HoTen, new { @class = "form-control gold-input", placeholder = "Nguyễn Văn A" })
+                        @Html.ValidationMessageFor(m => m.HoTen, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Số điện thoại<span style="color: red">*</span></label>
+                        @Html.TextBoxFor(m => m.SDT, new { @class = "form-control gold-input", placeholder = "0912345678" })
+                        @Html.ValidationMessageFor(m => m.SDT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-label">Thời gian bắt đầu<span style="color: red">*</span></label>
+                        @Html.TextBoxFor(m => m.ThoiGianBatDau, "{0:yyyy-MM-ddTHH:mm}",
+                            new
+                            {
+                                @class = "form-control gold-input",
+                                type = "datetime-local",
+                                id = "ThoiGianBatDau"
+                            })
+                        @Html.ValidationMessageFor(m => m.ThoiGianBatDau, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Thời gian kết thúc (Dự kiến)<span style="color: red">*</span></label>
+                        @Html.TextBoxFor(m => m.ThoiGianKetThuc, "{0:yyyy-MM-ddTHH:mm}",
+                            new
+                            {
+                                @class = "form-control gold-input",
+                                type = "datetime-local",
+                                id = "ThoiGianKetThuc"
+                            })
+                        @Html.ValidationMessageFor(m => m.ThoiGianKetThuc, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-label">Số lượng khách<span style="color: red">*</span></label>
+                        @Html.TextBoxFor(m => m.SoNguoi, new { @class = "form-control gold-input", type = "number", min = "1" })
+                        @Html.ValidationMessageFor(m => m.SoNguoi, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Ghi chú thêm</label>
+                        @Html.TextAreaFor(m => m.GhiChu, new { @class = "form-control gold-input", rows = 1, placeholder = "Ví dụ: Cần ghế trẻ em..." })
+                        @Html.ValidationMessageFor(m => m.GhiChu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-gold">GỬI YÊU CẦU ĐẶT BÀN</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        function toLocalISOString(input) {
+            const d = new Date(input);
+            d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+            return d.toISOString().slice(0, 16);
+        }
+
+        $(document).ready(function () {
+            var $startInput = $('#ThoiGianBatDau');
+            var $endInput = $('#ThoiGianKetThuc');
+            var now = new Date();
+            $startInput.attr('min', toLocalISOString(now));
+
+            $startInput.on('change', function () {
+                var startTimeVal = $(this).val();
+
+                if (startTimeVal) {
+                    $endInput.attr('min', startTimeVal);
+
+                    var startDate = new Date(startTimeVal);
+                    var endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000));
+                    $endInput.val(toLocalISOString(endDate));
+                } else {
+                    $endInput.removeAttr('min');
+                }
+            });
+
+            $endInput.on('change', function () {
+                var startVal = $startInput.val();
+                var endVal = $(this).val();
+
+                if (startVal && endVal) {
+                    if (new Date(endVal) <= new Date(startVal)) {
+                        alert("Thời gian kết thúc phải sau thời gian bắt đầu!");
+                        $(this).val("");
+                    }
+                }
+            });
+        });
+    </script>
+}

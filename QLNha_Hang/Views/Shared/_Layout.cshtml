@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - Nhà hàng QL</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .navbar-brand {
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+        }
+        .nav-link {
+            color: #333 !important;
+            transition: 0.2s;
+        }
+        .nav-link:hover {
+            color: #dc3545 !important;
+        }
+        footer {
+            font-size: 0.95rem;
+        }
+        @@media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger" href="@Url.Action("Index", "Home")">
+                <img src="~/Content/images/logo.jpg" alt="Logo" width="60" height="60" class="rounded-circle me-2" />
+                QLNhàHàng
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.ActivePage == "Home" ? "active text-danger fw-bold" : "")"
+                           href="@Url.Action("Index", "Home")">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.ActivePage == "Menu" ? "active text-danger fw-bold" : "")"
+                           href="@Url.Action("Index", "Menu")">Thực đơn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.ActivePage == "Booking" ? "active text-danger fw-bold" : "")"
+                           href="@Url.Action("Index", "Booking")">Đặt bàn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.ActivePage == "Contact" ? "active text-danger fw-bold" : "")"
+                           href="@Url.Action("Index", "Contact")">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.ActivePage == "OrderHistory" ? "active text-danger fw-bold" : "")"
+                           href="@Url.Action("OrderHistory", "Menu")">Đặt món</a>
+                    </li>
+                </ul>
+
+ 
+                <ul class="navbar-nav">
+                    @if (Session["UserName"] == null)
+                    {
+                        <li class="nav-item">
+                            <a class="btn btn-outline-danger me-2" href="@Url.Action("Login", "Account")">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-danger" href="@Url.Action("Register", "Account")">Đăng ký</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-semibold text-dark" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle me-1"></i> @Session["UserName"]
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="@Url.Action("Profile", "Account")">Hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Orders", "Account")">Đơn hàng</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item text-danger" href="@Url.Action("Logout", "Account")">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container mt-4 mb-5">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-light border-top py-4 mt-auto">
+        <div class="container text-center text-muted">
+            <p class="mb-0">&copy; @DateTime.Now.Year - QLNhàHàng. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

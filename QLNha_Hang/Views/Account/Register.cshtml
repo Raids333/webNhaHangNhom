@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Đăng ký";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - QLNhà Hàng</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: "Segoe UI", sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .auth-wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .auth-left {
+            flex: 1.1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+            .auth-left img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-right: 1px solid #eee;
+            }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .auth-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 60px 40px;
+        }
+
+        .auth-box {
+            width: 100%;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px 45px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 12px 15px;
+            font-size: 15px;
+        }
+
+        .btn-auth {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            padding: 12px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+            .btn-auth:hover {
+                background-color: #0b5ed7;
+            }
+
+        .form-text {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+            .form-text a {
+                text-decoration: none;
+                color: #0d6efd;
+                font-weight: 500;
+            }
+
+                .form-text a:hover {
+                    text-decoration: underline;
+                }
+
+        @@media (max-width: 992px) {
+            .auth-left {
+                display: none;
+            }
+
+            .auth-right {
+                flex: 1;
+                padding: 40px 25px;
+            }
+
+            .auth-box {
+                max-width: 420px;
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-left">
+            <img src="~/Content/images/logo.jpg" alt="Ảnh nhà hàng" />
+            <div class="overlay"></div>
+        </div>
+
+
+        <div class="auth-right">
+            <div class="auth-box">
+                <h3 class="auth-title">Tạo tài khoản mới</h3>
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="alert alert-danger text-center">@ViewBag.ErrorMessage</div>
+                }
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+                }
+
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Tên đăng nhập</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Nhập tên đăng nhập..." required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="Nhập email..." required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Số điện thoại</label>
+                        <input type="tel" class="form-control" id="phone" name="phone"
+                               placeholder="Nhập số điện thoại..." required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mật khẩu</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Nhập mật khẩu..." required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                               placeholder="Nhập lại mật khẩu..." required />
+                    </div>
+
+                    <button type="submit" class="btn btn-auth mt-2">Đăng ký</button>
+
+                    <div class="form-text">
+                        <span>Đã có tài khoản? </span>
+                        <a href="@Url.Action("Login", "Account")">Đăng nhập ngay</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

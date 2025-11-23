@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Trang chủ - Ẩm Thực Việt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<QLNha_Hang.Models.MonAn>
+
+<style>
+    .hero-section {
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        color: #fff;
+        background-color: #000; 
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+        .hero-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%); 
+            transition: transform 8s ease-in-out;
+        }
+
+    .hero-section:hover .hero-overlay img {
+        transform: scale(1.05); 
+    }
+
+    .hero-section .container {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .hero-section p {
+        font-size: 1.25rem;
+        color: #f8f9fa;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border: none;
+        font-weight: 600;
+        padding: 10px 30px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+    .btn-outline-light {
+        border-radius: 30px;
+        font-weight: 600;
+        padding: 10px 30px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-light:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+
+    .about-section img {
+        border-radius: 15px;
+    }
+
+    .menu-section .card img {
+        height: 250px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .menu-section .card {
+        border-radius: 15px;
+        transition: transform 0.3s;
+    }
+
+        .menu-section .card:hover {
+            transform: translateY(-8px);
+        }
+
+    .booking-section {
+        background: linear-gradient(to right, #212529, #2f2f2f);
+    }
+</style>
+<section class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+    <div class="hero-overlay">
+        <img src="~/Content/images/banner.jpg" />
+    </div>
+    <div class="container position-relative">
+        <h1 class="display-4 fw-bold mb-3">Chào mừng đến với <span class="text-warning">Nhà Hàng Ẩm Thực Việt</span></h1>
+        <p class="lead mb-4">Thưởng thức hương vị tinh tế trong không gian sang trọng</p>
+        <a href="@Url.Action("Index", "Menu")" class="btn btn-warning btn-lg me-3">Xem Thực Đơn</a>
+        <a href="@Url.Action("Index", "Booking")" class="btn btn-outline-light btn-lg">Đặt Bàn Ngay</a>
+    </div>
+</section>
+<section class="about-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="~/Content/images/restaurant_interior.jpg" class="img-fluid rounded shadow-lg" alt="Không gian nhà hàng" />
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-3">Về Chúng Tôi</h2>
+                <p class="text-muted mb-4">
+                    Tọa lạc tại trung tâm thành phố, <strong>Ẩm Thực Việt</strong> là điểm đến lý tưởng để bạn trải nghiệm
+                    những món ăn tinh tế, được chế biến từ nguyên liệu tươi ngon nhất.
+                    Chúng tôi luôn đặt chất lượng và trải nghiệm khách hàng lên hàng đầu.
+                </p>
+                <a href="@Url.Action("About", "Home")" class="btn btn-dark">Tìm hiểu thêm</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="menu-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold text-warning">Thực Đơn Nổi Bật</h2>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm border-0 h-100">
+                        <img src="@item.AnhMon" class="card-img-top" alt="@item.TenMon" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">@item.TenMon</h5>
+                            <p class="text-muted">@item.LoaiMon.TenLoai</p>
+                            <p class="text-danger fw-bold">@String.Format("{0:N0} ₫", item.DonGia)</p>
+                            <p class="text-secondary small">@item.MoTa</p>
+                            <a href="@Url.Action("DatMon", "Menu", new { id = item.MonAnID })" class="btn btn-warning btn-sm">
+                                Đặt món
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="booking-section py-5 bg-dark text-white text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Đặt Bàn Ngay Hôm Nay</h2>
+        <p class="mb-4">Trải nghiệm ẩm thực tuyệt vời cùng gia đình và bạn bè</p>
+        <a href="@Url.Action("Index", "Booking")" class="btn btn-warning btn-lg">Đặt Bàn</a>
+    </div>
+</section>
+

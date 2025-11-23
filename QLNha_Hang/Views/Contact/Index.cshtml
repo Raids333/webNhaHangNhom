@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+            <div class="card shadow border-0" style="border-radius: 15px;">
+
+                <div class="row g-0">
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0"
+                             class="img-fluid h-100" style="border-radius: 15px 0 0 15px; object-fit: cover;" />
+                    </div>
+                    <div class="col-md-7 p-4">
+
+                        <h2 class="fw-bold mb-3 text-center text-success">Liên hệ với chúng tôi</h2>
+
+                        <p class="text-muted text-center mb-4" style="font-size: 16px;">
+                            Nếu bạn có thắc mắc, góp ý hoặc muốn đặt bàn nhanh, hãy gửi thông tin cho chúng tôi.
+                        </p>
+
+                        <form method="post" action="@Url.Action("Send", "Contact")">
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Họ và tên</label>
+                                <input type="text" name="HoTen" class="form-control" placeholder="Nhập họ tên của bạn" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Email</label>
+                                <input type="email" name="Email" class="form-control" placeholder="example@gmail.com" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Số điện thoại</label>
+                                <input type="text" name="SDT" class="form-control" placeholder="Nhập SĐT" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Nội dung</label>
+                                <textarea name="NoiDung" class="form-control" rows="4" placeholder="Bạn muốn gửi gì cho chúng tôi?" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 py-2 fw-bold">
+                                Gửi liên hệ
+                            </button>
+                        </form>
+
+                        <hr class="my-4" />
+                        <div class="text-center">
+                            <h5 class="fw-bold">📍 Địa chỉ</h5>
+                            <p class="text-muted">123 Đường Âu Cơ, Quận Tân Phú, TP. Hồ Chí Minh</p>
+
+                            <h5 class="fw-bold">📞 Điện thoại</h5>
+                            <p class="text-muted">0123 456 789</p>
+
+                            <h5 class="fw-bold">⏰ Giờ hoạt động</h5>
+                            <p class="text-muted">08:00 - 22:00 (Tất cả các ngày trong tuần)</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    body {
+        background: #f8f9fa;
+    }
+</style>
